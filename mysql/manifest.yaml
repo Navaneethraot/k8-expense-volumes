@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql
+  namespace: expense
+spec:
+  storageClassName:  "expense-ebs" # empty string must be explicitly set otherwise default storage will be set
+  accessModes:
+   - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi
